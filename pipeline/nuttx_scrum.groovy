@@ -8,10 +8,11 @@ def Build(){
         git branch
         
         cd configs/nrf52832_dk
-        make nsh -j32 
-        make clean -j32
-        make ble_app_uart -j32
-        make clean -j32
+        make clean -j2
+        make nsh -j2 
+        make clean -j2
+        make ble_app_uart -j2
+        make clean -j2
     '''
 }
 node('build_server') {
