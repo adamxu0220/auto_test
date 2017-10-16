@@ -29,7 +29,9 @@ def jenkins_reviewer_pretest_failed(GERRIT_HOST, GERRIT_PORT, GERRIT_CHANGE_NUMB
 def jenkins_reviewer_pretest(GERRIT_HOST, GERRIT_PORT, GERRIT_CHANGE_NUMBER, GERRIT_PATCHSET_NUMBER, fg_pass){
         __jenkins_reviewer(GERRIT_HOST, GERRIT_PORT, GERRIT_CHANGE_NUMBER, GERRIT_PATCHSET_NUMBER, (fg_pass ? "+1":"-1"))
 }
-
+def jenkins_reviewer_merge(GERRIT_HOST, GERRIT_PORT, GERRIT_CHANGE_NUMBER, GERRIT_PATCHSET_NUMBER, fg_pass){
+        __jenkins_reviewer(GERRIT_HOST, GERRIT_PORT, GERRIT_CHANGE_NUMBER, GERRIT_PATCHSET_NUMBER, (fg_pass ? "+2":"-2"))
+}
 def get_CLs_detail(CLSets, GERRIT_PROJECT_list, GERRIT_CHANGE_NUMBER_list, GERRIT_PATCHSET_NUMBER_list, GERRIT_CHANGE_OWNER_EMAIL_list) {
 
     int total_selected;//Integer.getInt(json_test.getJSONObject("total").toString());
