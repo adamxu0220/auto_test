@@ -3,7 +3,11 @@ def __jenkins_reviewer(GERRIT_HOST, GERRIT_PORT, GERRIT_CHANGE_NUMBER, GERRIT_PA
         def reason;
         if (result.contentEquals("-1") || result.contentEquals("-2")) {
                 reason = "Auto Build&Test failed; ref:"+BUILD_URL+"/console"
-        }else if (result.contentEquals("+1") || result.contentEquals("+2")) {
+        }else if (result.contentEquals("+1")){
+                reason = "Auto Build&Test passed; ref:"+BUILD_URL+"/console"
+        }
+        else if (result.contentEquals("+2")){
+                result += " --submit " 
                 reason = "Auto Build&Test passed; ref:"+BUILD_URL+"/console"
         }
         else {

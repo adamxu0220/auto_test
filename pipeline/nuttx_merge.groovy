@@ -15,7 +15,7 @@ def Build(){
         make clean
     '''
 }
-node('build_server') {
+node('build_server_ubuntu') {
     
     def res_stage_get_pure_sourcecode = true
     def res_stage_get_CL = true
